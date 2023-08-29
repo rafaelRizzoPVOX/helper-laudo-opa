@@ -130,7 +130,7 @@ export default function Laudos() {
                 </div>
 
                 <div>
-                    Voltar
+                    <Link href={"/"}>Voltar</Link>
                 </div>
             </nav>
 
