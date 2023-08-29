@@ -1,3 +1,8 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Tooltip from '@mui/material/Tooltip';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from 'next/router'; // Importe o useRouter para fazer o redirecionamento
@@ -129,9 +134,14 @@ export default function Laudos() {
                     <p>Empresa: {capitalize(businessName)}</p>
                 </div>
 
-                <div>
-                    <Link href={"/"}>Voltar</Link>
-                </div>
+                <Box>
+                    <Tooltip title="Voltar" placement="left">
+                        <Link href={"/"}>
+                            <ArrowBackIcon />
+                        </Link>
+                    </Tooltip>
+
+                </Box>
             </nav>
 
             <section className={styles.section}>
