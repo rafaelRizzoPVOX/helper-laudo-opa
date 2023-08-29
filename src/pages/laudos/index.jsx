@@ -17,6 +17,7 @@ import {
     copyToClipboardBoaTarde,
     copyToClipboardBomDia,
     copyToClipboardEncerramento,
+    copyToClipboardFaltaDeComunicacao,
     copyToClipboardHoraTecnica
 } from '../../copyFunctions';
 
@@ -88,7 +89,8 @@ export default function Laudos() {
                     <button onClick={() => copyToClipboardBoaTarde(userName, businessName)}>🌅 Boa tarde</button>
                     <button onClick={() => copyToClipboardBoaNoite(userName, businessName)}>🌙 Boa noite</button>
                     <button onClick={() => copyToClipboardEncerramento()}>👋 Encerramento</button>
-                    <button onClick={() => copyToClipboardHoraTecnica()}>💲 Hora técnica ...</button>
+                    <button onClick={() => copyToClipboardFaltaDeComunicacao()}>⏰ Falta de comunicação</button>
+                    <button onClick={() => copyToClipboardHoraTecnica()}>💲 Hora técnica</button>
                 </div>
 
                 <footer>&copy; Rafael Rizzo ~ Dev <Link href="https://phonevox.com.br" target='_blank'>Phonevox</Link></footer>
