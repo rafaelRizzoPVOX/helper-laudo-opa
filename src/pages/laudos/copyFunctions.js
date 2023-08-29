@@ -7,7 +7,7 @@ function capitalize(str) {
 
 // Funções dos botões
 // Bom dia
-export const copyToClipboardBomDia = (name, business) => {
+export function copyToClipboardBomDia(name, business) {
     if (typeof window !== 'undefined' && 'navigator' in window) {
         navigator.clipboard.writeText(`Bom dia! aqui é o ${capitalize(name)} do suporte da ${capitalize(business)}, tudo bom?`)
             .then(() => {
@@ -20,7 +20,7 @@ export const copyToClipboardBomDia = (name, business) => {
 };
 
 // Boa tarde
-export const copyToClipboardBoaTarde = (name, business) => {
+export function copyToClipboardBoaTarde(name, business) {
     if (typeof window !== 'undefined' && 'navigator' in window) {
         navigator.clipboard.writeText(`Boa tarde! aqui é o ${capitalize(name)} do suporte da ${capitalize(business)}, tudo bom?`)
             .then(() => {
@@ -33,7 +33,7 @@ export const copyToClipboardBoaTarde = (name, business) => {
 };
 
 // Boa tarde
-export const copyToClipboardBoaNoite = (name, business) => {
+export function copyToClipboardBoaNoite(name, business) {
     if (typeof window !== 'undefined' && 'navigator' in window) {
         navigator.clipboard.writeText(`Boa noite! aqui é o ${capitalize(name)} do suporte da ${capitalize(business)}, tudo bom?`)
             .then(() => {
@@ -46,7 +46,7 @@ export const copyToClipboardBoaNoite = (name, business) => {
 };
 
 // Encerramento
-export const copyToClipboardEncerramento = () => {
+export function copyToClipboardEncerramento() {
     if (typeof window !== 'undefined' && 'navigator' in window) {
         navigator.clipboard.writeText(`Vou estar encerrando o chat aqui então, qualquer coisa estamos a disposição, tenha um ótimo dia! 😊`)
             .then(() => {
@@ -59,7 +59,7 @@ export const copyToClipboardEncerramento = () => {
 };
 
 // Hora técnica
-export const copyToClipboardHoraTecnica = () => {
+export function copyToClipboardHoraTecnica() {
     if (typeof window !== 'undefined' && 'navigator' in window) {
         toast.error('Esse botão ainda não foi configurado');
         // navigator.clipboard.writeText(`Vou estar encerrando o chat aqui então, qualquer coisa estamos a disposição, tenha um ótimo dia! 😊`)
