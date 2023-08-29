@@ -1,7 +1,27 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 20px;
+    background-color: #8547be;
+    color: #111;
+    font-weight: 600;
+
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeIn 1s forwards ease;
+}
+
+.navbar div {
+    display: flex;
+    gap: 20px;
+}
+
 .section {
     margin-top: 50px;
     color: #F5F5F5;
-    min-height: calc(100vh - 48px - 50px);
+    min-height: calc(100vh - 48px - 52px);
     position: relative;
     text-align: center;
     opacity: 0;
@@ -68,6 +88,6 @@
 
 /* styles/toastStyles.module.css */
 
-.teste .Toastify__toast-theme--light{
+.teste .Toastify__toast-theme--light {
     background-color: red;
 }

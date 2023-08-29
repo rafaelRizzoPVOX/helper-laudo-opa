@@ -26,10 +26,10 @@ export default function Laudos() {
         if (typeof window !== 'undefined' && 'navigator' in window) {
             navigator.clipboard.writeText(`Bom dia! aqui é o ${capitalize(userName)} do suporte da ${capitalize(businessName)}, tudo bom?`)
                 .then(() => {
-                    toast.success('Copied to clipboard!');
+                    toast.success('Laudo copiado com sucesso!');
                 })
                 .catch((error) => {
-                    toast.error('Error copying to clipboard', error);
+                    toast.error('Erro ao copiar', error);
                 });
         }
     };
@@ -39,10 +39,10 @@ export default function Laudos() {
         if (typeof window !== 'undefined' && 'navigator' in window) {
             navigator.clipboard.writeText(`Boa tarde! aqui é o ${capitalize(userName)} do suporte da ${capitalize(businessName)}, tudo bom?`)
                 .then(() => {
-                    toast.success('Copied to clipboard!');
+                    toast.success('Laudo copiado com sucesso!');
                 })
                 .catch((error) => {
-                    toast.error('Error copying to clipboard', error);
+                    toast.error('Erro ao copiar', error);
                 });
         }
     };
@@ -52,10 +52,10 @@ export default function Laudos() {
         if (typeof window !== 'undefined' && 'navigator' in window) {
             navigator.clipboard.writeText(`Boa noite! aqui é o ${capitalize(userName)} do suporte da ${capitalize(businessName)}, tudo bom?`)
                 .then(() => {
-                    toast.success('Copied to clipboard!');
+                    toast.success('Laudo copiado com sucesso!');
                 })
                 .catch((error) => {
-                    toast.error('Error copying to clipboard', error);
+                    toast.error('Erro ao copiar', error);
                 });
         }
     };
@@ -65,11 +65,25 @@ export default function Laudos() {
         if (typeof window !== 'undefined' && 'navigator' in window) {
             navigator.clipboard.writeText(`Vou estar encerrando o chat aqui então, qualquer coisa estamos a disposição, tenha um ótimo dia! 😊`)
                 .then(() => {
-                    toast.success('Copied to clipboard!');
+                    toast.success('Laudo copiado com sucesso!');
                 })
                 .catch((error) => {
-                    toast.error('Error copying to clipboard', error);
+                    toast.error('Erro ao copiar', error);
                 });
+        }
+    };
+
+    // Hora técnica
+    const copyToClipboardHoraTecnica = (name, business) => {
+        if (typeof window !== 'undefined' && 'navigator' in window) {
+            toast.error('Esse botão ainda não foi configurado');
+            // navigator.clipboard.writeText(`Vou estar encerrando o chat aqui então, qualquer coisa estamos a disposição, tenha um ótimo dia! 😊`)
+            //     .then(() => {
+            //         toast.success('Laudo copiado com sucesso!');
+            //     })
+            //     .catch((error) => {
+            //         toast.error('Erro ao copiar', error);
+            //     });
         }
     };
 
@@ -87,6 +101,7 @@ export default function Laudos() {
         setUserName(nameValue)
 
         setBusinessName(BusinessValue)
+
     }, []);
 
     const toastContainerStyle = {
@@ -108,8 +123,12 @@ export default function Laudos() {
 
     return (
         <div>
-            <p>Nome: {capitalize(userName)}</p>
-            <p>Empresa: {capitalize(businessName)}</p>
+            <nav className={styles.navbar}>
+                <div>
+                    <p>Nome: {capitalize(userName)}</p>
+                    <p>Empresa: {capitalize(businessName)}</p>
+                </div>
+            </nav>
 
             <section className={styles.section}>
                 <div>
@@ -117,7 +136,7 @@ export default function Laudos() {
                     <button onClick={copyToClipboardBoaTarde}>🌅 Boa tarde</button>
                     <button onClick={copyToClipboardBoaNoite}>🌙 Boa noite</button>
                     <button onClick={copyToClipboardEncerramento}>👋 Encerramento</button>
-                    <button>💲 Hora técnica ...</button>
+                    <button onClick={copyToClipboardHoraTecnica}>💲 Hora técnica ...</button>
                 </div>
 
                 <footer>&copy; Rafael Rizzo ~ Dev <Link href="https://phonevox.com.br" target='_blank'>Phonevox</Link></footer>
