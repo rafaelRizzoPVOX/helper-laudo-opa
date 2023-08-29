@@ -85,9 +85,3 @@
         grid-template-columns: repeat(1, 1fr);
     }
 }
-
-/* styles/toastStyles.module.css */
-
-.teste .Toastify__toast-theme--light {
-    background-color: red;
-}
