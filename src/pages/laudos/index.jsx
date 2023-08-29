@@ -18,7 +18,7 @@ import {
     copyToClipboardBomDia,
     copyToClipboardEncerramento,
     copyToClipboardHoraTecnica
-} from './copyFunctions';
+} from '../../copyFunctions';
 
 export default function Laudos() {
     const router = useRouter();
