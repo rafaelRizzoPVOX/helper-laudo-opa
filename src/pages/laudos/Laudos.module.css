@@ -1,0 +1,73 @@
+.section {
+    margin-top: 50px;
+    color: #F5F5F5;
+    min-height: calc(100vh - 48px - 50px);
+    position: relative;
+    text-align: center;
+    opacity: 0;
+    padding-bottom: 50px;
+    transform: translateY(-50px);
+    animation: fadeIn 1s forwards ease;
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    gap: 20px;
+    padding: 10px;
+    margin: auto;
+}
+
+.section button {
+    width: 100%;
+    font-size: 1.25rem;
+    border: 1.5px solid #b772f7;
+    border-radius: .375rem;
+    padding: 12px;
+    transition: all .15s ease;
+}
+
+.section button:hover {
+    background-color: #8547be;
+}
+
+.section footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    font-weight: 100;
+    font-size: .8rem;
+    text-align: center;
+    color: #d8aeff;
+}
+
+.section footer a {
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .section div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section div {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* styles/toastStyles.module.css */
+
+.teste .Toastify__toast-theme--light{
+    background-color: red;
+}
