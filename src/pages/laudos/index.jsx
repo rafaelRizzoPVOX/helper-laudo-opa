@@ -8,10 +8,17 @@ import Cookies from "js-cookie";
 import { useRouter } from 'next/router'; // Importe o useRouter para fazer o redirecionamento
 import Link from "next/link";
 
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import styles from './Laudos.module.css'
+import {
+    copyToClipboardBoaNoite,
+    copyToClipboardBoaTarde,
+    copyToClipboardBomDia,
+    copyToClipboardEncerramento,
+    copyToClipboardHoraTecnica
+} from '../laudosFunctions/copyFunctions';
 
 export default function Laudos() {
     const router = useRouter();
@@ -24,73 +31,10 @@ export default function Laudos() {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
-    // Funções dos botões
-
-    // Bom dia
-    const copyToClipboardBomDia = (name, business) => {
-        if (typeof window !== 'undefined' && 'navigator' in window) {
-            navigator.clipboard.writeText(`Bom dia! aqui é o ${capitalize(userName)} do suporte da ${capitalize(businessName)}, tudo bom?`)
-                .then(() => {
-                    toast.success('Laudo copiado com sucesso!');
-                })
-                .catch((error) => {
-                    toast.error('Erro ao copiar', error);
-                });
-        }
-    };
-
-    // Boa tarde
-    const copyToClipboardBoaTarde = (name, business) => {
-        if (typeof window !== 'undefined' && 'navigator' in window) {
-            navigator.clipboard.writeText(`Boa tarde! aqui é o ${capitalize(userName)} do suporte da ${capitalize(businessName)}, tudo bom?`)
-                .then(() => {
-                    toast.success('Laudo copiado com sucesso!');
-                })
-                .catch((error) => {
-                    toast.error('Erro ao copiar', error);
-                });
-        }
-    };
-
-    // Boa tarde
-    const copyToClipboardBoaNoite = (name, business) => {
-        if (typeof window !== 'undefined' && 'navigator' in window) {
-            navigator.clipboard.writeText(`Boa noite! aqui é o ${capitalize(userName)} do suporte da ${capitalize(businessName)}, tudo bom?`)
-                .then(() => {
-                    toast.success('Laudo copiado com sucesso!');
-                })
-                .catch((error) => {
-                    toast.error('Erro ao copiar', error);
-                });
-        }
-    };
-
-    // Encerramento
-    const copyToClipboardEncerramento = (name, business) => {
-        if (typeof window !== 'undefined' && 'navigator' in window) {
-            navigator.clipboard.writeText(`Vou estar encerrando o chat aqui então, qualquer coisa estamos a disposição, tenha um ótimo dia! 😊`)
-                .then(() => {
-                    toast.success('Laudo copiado com sucesso!');
-                })
-                .catch((error) => {
-                    toast.error('Erro ao copiar', error);
-                });
-        }
-    };
-
-    // Hora técnica
-    const copyToClipboardHoraTecnica = (name, business) => {
-        if (typeof window !== 'undefined' && 'navigator' in window) {
-            toast.error('Esse botão ainda não foi configurado');
-            // navigator.clipboard.writeText(`Vou estar encerrando o chat aqui então, qualquer coisa estamos a disposição, tenha um ótimo dia! 😊`)
-            //     .then(() => {
-            //         toast.success('Laudo copiado com sucesso!');
-            //     })
-            //     .catch((error) => {
-            //         toast.error('Erro ao copiar', error);
-            //     });
-        }
-    };
+    function clearCookies() {
+        Cookies.remove('name');
+        Cookies.remove('business');
+    }
 
     useEffect(() => {
         // Caso o nome ou a empresa esteja vázia mando para o inicio de tudo para preencher
@@ -121,11 +65,6 @@ export default function Laudos() {
         fontSize: '14px',
     };
 
-    const svgStyle = {
-        fill: 'green', // Altere a cor desejada
-        marginRight: '8px' // Apenas para espaçamento
-    };
-
     return (
         <div>
             <nav className={styles.navbar}>
@@ -135,22 +74,21 @@ export default function Laudos() {
                 </div>
 
                 <Box>
-                    <Tooltip title="Voltar" placement="left">
+                    <Tooltip title="Voltar" placement="left" onClick={clearCookies}>
                         <Link href={"/"}>
                             <ArrowBackIcon />
                         </Link>
                     </Tooltip>
-
                 </Box>
             </nav>
 
             <section className={styles.section}>
                 <div>
-                    <button onClick={copyToClipboardBomDia}>🌞 Bom dia</button>
-                    <button onClick={copyToClipboardBoaTarde}>🌅 Boa tarde</button>
-                    <button onClick={copyToClipboardBoaNoite}>🌙 Boa noite</button>
-                    <button onClick={copyToClipboardEncerramento}>👋 Encerramento</button>
-                    <button onClick={copyToClipboardHoraTecnica}>💲 Hora técnica ...</button>
+                    <button onClick={() => copyToClipboardBomDia(userName, businessName)}>🌞 Bom dia</button>
+                    <button onClick={() => copyToClipboardBoaTarde(userName, businessName)}>🌅 Boa tarde</button>
+                    <button onClick={() => copyToClipboardBoaNoite(userName, businessName)}>🌙 Boa noite</button>
+                    <button onClick={() => copyToClipboardEncerramento}>👋 Encerramento</button>
+                    <button onClick={() => copyToClipboardHoraTecnica}>💲 Hora técnica ...</button>
                 </div>
 
                 <footer>&copy; Rafael Rizzo ~ Dev <Link href="https://phonevox.com.br" target='_blank'>Phonevox</Link></footer>

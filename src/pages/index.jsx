@@ -18,6 +18,12 @@ export default function Home() {
         }
     };
 
+    useEffect(() => {
+        if (Cookies.get("name") || Cookies.get("business")) {
+            router.push("/laudos");
+        }
+    }, [])
+
     return (
         <>
             <main className={styles.main}>
