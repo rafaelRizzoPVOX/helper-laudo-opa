@@ -128,6 +128,10 @@ export default function Laudos() {
                     <p>Nome: {capitalize(userName)}</p>
                     <p>Empresa: {capitalize(businessName)}</p>
                 </div>
+
+                <div>
+                    Voltar
+                </div>
             </nav>
 
             <section className={styles.section}>

@@ -11,6 +11,7 @@
     font-family: 'Roboto', sans-serif;
     position: relative;
     opacity: 0;
+    padding: 0 20px 50px 20px;
     padding-bottom: 50px;
     transform: translateY(-50px);
     animation: fadeIn 1s forwards ease;
@@ -40,6 +41,7 @@
     justify-content: center;
     flex-direction: column;
     max-width: 900px;
+    padding: 0 10px;
 }
 
 .main form label {
@@ -52,7 +54,7 @@
     border-bottom: 2px solid #222;
     outline: none;
     min-width: 100%;
-    font-size: 4rem;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -80,4 +82,33 @@
 
 .main footer a {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .main h1 {
+        font-size: 2.8rem;
+    }
+
+    .main h2 {
+        font-size: 1.8rem;
+    }
+
+    .main button {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 468px) {
+    .main h1 {
+        font-size: 2rem;
+    }
+
+    .main h2 {
+        font-size: 1.2rem;
+    }
+
+    .main input {
+        font-size: 1.2rem;
+    }
 }

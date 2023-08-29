@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    min-height: 100vh;
-    overflow-x: hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Exemplo de uso da paleta dark mode em CSS */
 body {
     background-color: #121212;
     color: #d8aeff;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
