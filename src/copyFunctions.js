@@ -45,6 +45,32 @@ export function copyToClipboardBoaNoite(name, business) {
     }
 };
 
+// Pergunta como pode ajudar
+export function copyToClipboardComoAjudo() {
+    if (typeof window !== 'undefined' && 'navigator' in window) {
+        navigator.clipboard.writeText(`Como posso ajudar?`)
+            .then(() => {
+                toast.success('Laudo copiado com sucesso!');
+            })
+            .catch((error) => {
+                toast.error('Erro ao copiar', error);
+            });
+    }
+};
+
+// Não entendi
+export function copyToClipboardExplqueMelhor() {
+    if (typeof window !== 'undefined' && 'navigator' in window) {
+        navigator.clipboard.writeText(`Não consegui entender direito, poderia me explicar melhor? Se prefeir pode mandar áudio.`)
+            .then(() => {
+                toast.success('Laudo copiado com sucesso!');
+            })
+            .catch((error) => {
+                toast.error('Erro ao copiar', error);
+            });
+    }
+};
+
 // Encerramento
 export function copyToClipboardEncerramento() {
     if (typeof window !== 'undefined' && 'navigator' in window) {
@@ -58,7 +84,7 @@ export function copyToClipboardEncerramento() {
     }
 };
 
-// Encerramento
+// Falta de comunicação
 export function copyToClipboardFaltaDeComunicacao() {
     if (typeof window !== 'undefined' && 'navigator' in window) {
         navigator.clipboard.writeText(`Bom... Parece que teve que se ausentar, vamos estar encerrando o atendimento aqui, qualquer coisa estamos a disposição 🫡 tenha um ótimo dia! 😁`)

@@ -1,0 +1,15 @@
+.add_card {
+    border-color: #378852 !important;
+    transition: all .2s ease;
+}
+
+.add_card svg {
+    margin-right: 5px;
+    color: #59ce80;
+}
+
+.add_card:hover {
+    background-color: #41a161 !important;
+    box-shadow: 2px 2px 0px #378852 !important;
+}
+

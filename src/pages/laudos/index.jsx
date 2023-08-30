@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
+import TextField from '@mui/material/TextField';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 import { useEffect, useState } from "react";
@@ -16,10 +17,14 @@ import {
     copyToClipboardBoaNoite,
     copyToClipboardBoaTarde,
     copyToClipboardBomDia,
+    copyToClipboardComoAjudo,
+    copyToClipboardExplqueMelhor,
     copyToClipboardEncerramento,
     copyToClipboardFaltaDeComunicacao,
     copyToClipboardHoraTecnica
 } from '../../copyFunctions';
+
+import AddCardBtn from '@/addCard';
 
 export default function Laudos() {
     const router = useRouter();
@@ -84,21 +89,47 @@ export default function Laudos() {
             </nav>
 
             <section className={styles.section}>
-                <div>
+                <div className={styles.container_btns}>
                     <button onClick={() => copyToClipboardBomDia(userName, businessName)}>🌞 Bom dia</button>
                     <button onClick={() => copyToClipboardBoaTarde(userName, businessName)}>🌅 Boa tarde</button>
                     <button onClick={() => copyToClipboardBoaNoite(userName, businessName)}>🌙 Boa noite</button>
+                    <button onClick={() => copyToClipboardComoAjudo()}>🤔 Pergunta dúvida</button>
+                    <button onClick={() => copyToClipboardExplqueMelhor()}>❓ Explique melhor</button>
                     <button onClick={() => copyToClipboardEncerramento()}>👋 Encerramento</button>
                     <button onClick={() => copyToClipboardFaltaDeComunicacao()}>⏰ Falta de comunicação</button>
                     <button onClick={() => copyToClipboardHoraTecnica()}>💲 Hora técnica</button>
+                    <AddCardBtn />
                 </div>
 
-                <footer>&copy; Rafael Rizzo ~ Dev <Link href="https://phonevox.com.br" target='_blank'>Phonevox</Link></footer>
+                <footer>
+                    &copy; Rafael Rizzo ~ Dev <Link href="https://phonevox.com.br" target='_blank'>Phonevox</Link>
+                </footer>
             </section>
+
             <ToastContainer autoClose={4000}
                 style={toastContainerStyle}
                 toastStyle={toastStyle}
             />
+
+            {/* Modal add card */}
+            <div className={styles.modal_container}>
+                <form className={styles.modal_content}>
+                    <h1>Card Custom</h1>
+                    <div className={styles.modal_title}>
+                        <label htmlFor="new_title">
+                            <p>Título:</p>
+                            <input type="text" id="new_title" className={styles.card_input_title} placeholder="Ex: Manutenção" />
+                        </label>
+                    </div>
+                    <div className={styles.modal_text}>
+                        <label htmlFor="new_script">
+                            <p>Mensagem:</p>
+                            <textarea id="new_script" cols="30" rows="10" placeholder="Digite aqui o que gostaria de ser copiado..."></textarea>
+                        </label>
+                    </div>
+                    <button>Salvar</button>
+                </form>
+            </div>
         </div>
     );
 }

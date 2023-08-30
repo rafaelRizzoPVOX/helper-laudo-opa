@@ -7,7 +7,6 @@
     background-color: #8547be;
     color: #F5F5F5;
     font-weight: 600;
-
     opacity: 0;
     transform: translateY(-50px);
     animation: fadeIn 1s forwards ease;
@@ -47,9 +46,13 @@
 }
 
 .section button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     font-size: 1.25rem;
     border: 1.5px solid #b772f7;
+    box-shadow: 0 0 2px #b772f7;
     border-radius: .375rem;
     padding: 12px;
     transition: all .15s ease;
@@ -57,6 +60,7 @@
 
 .section button:hover {
     background-color: #8547be;
+    box-shadow: 2px 2px 0px #b772f7;
 }
 
 .section footer {
@@ -72,6 +76,62 @@
 
 .section footer a {
     text-decoration: underline;
+}
+
+.modal_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(22, 22, 22, .6);
+}
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    padding: 20px;
+    max-width: 400px;
+    min-width: 400px;
+    min-height: 400px;
+    gap: 20px;
+    border-radius: .5rem;
+    box-shadow: 0 0 0 50px rgba(22, 22, 22, .2);
+}
+
+.modal_content h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.modal_content input,
+.modal_content textarea {
+    background-color: #222;
+    border: 1px solid #d8aeff;
+    padding: 5px 10px;
+    outline: none;
+    color: #F5F5F5;
+    width: 100%;
+    border-radius: .2rem;
+}
+
+.modal_content button {
+    background-color: #b772f7;
+    color: #222;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 12px;
+    transition: all .2s ease;
+    border-radius: .2rem;
+}
+
+.modal_content button:hover {
+    background-color: #8547be;
 }
 
 @media (max-width: 1024px) {
