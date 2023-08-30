@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
-import TextField from '@mui/material/TextField';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import CloseIcon from '@mui/icons-material/Close';
 
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
@@ -98,7 +98,7 @@ export default function Laudos() {
                     <button onClick={() => copyToClipboardEncerramento()}>👋 Encerramento</button>
                     <button onClick={() => copyToClipboardFaltaDeComunicacao()}>⏰ Falta de comunicação</button>
                     <button onClick={() => copyToClipboardHoraTecnica()}>💲 Hora técnica</button>
-                    <AddCardBtn />
+                    {/* <AddCardBtn /> */}
                 </div>
 
                 <footer>
@@ -113,8 +113,9 @@ export default function Laudos() {
 
             {/* Modal add card */}
             <div className={styles.modal_container}>
+                <CloseIcon />
                 <form className={styles.modal_content}>
-                    <h1>Card Custom</h1>
+                    <h1>Novo script</h1>
                     <div className={styles.modal_title}>
                         <label htmlFor="new_title">
                             <p>Título:</p>
