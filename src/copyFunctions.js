@@ -61,7 +61,7 @@ export function copyToClipboardComoAjudo() {
 // Não entendi
 export function copyToClipboardExplqueMelhor() {
     if (typeof window !== 'undefined' && 'navigator' in window) {
-        navigator.clipboard.writeText(`Não consegui entender direito, poderia me explicar melhor? Se prefeir pode mandar áudio.`)
+        navigator.clipboard.writeText(`Não consegui entender direito, poderia me explicar melhor? Se preferir pode mandar áudio.`)
             .then(() => {
                 toast.success('Laudo copiado com sucesso!');
             })
