@@ -94,8 +94,8 @@ export default function Laudos() {
                     <button onClick={() => copyToClipboardBomDia(userName, businessName)}><Image unoptimized={true} src={"/icons/dia.gif"} width={30} height={30} /> Bom dia</button>
                     <button onClick={() => copyToClipboardBoaTarde(userName, businessName)}><Image unoptimized={true} src={"/icons/tarde.gif"} width={30} height={30} />Boa tarde</button>
                     <button onClick={() => copyToClipboardBoaNoite(userName, businessName)}><Image unoptimized={true} src={"/icons/noite.gif"} width={30} height={30} /> Boa noite</button>
-                    <button onClick={() => copyToClipboardComoAjudo()}><Image unoptimized={true} src={"/icons/pergunta-duvida.gif"} width={30} height={30} /> Pergunta dúvida</button>
-                    <button onClick={() => copyToClipboardExplqueMelhor()}><Image unoptimized={true} src={"/icons/explique-melhor.gif"} width={30} height={30} /> Explique melhor</button>
+                    <button onClick={() => copyToClipboardComoAjudo()}><Image unoptimized={true} src={"/icons/explique-melhor.gif"} width={30} height={30} /> Pergunta dúvida</button>
+                    <button onClick={() => copyToClipboardExplqueMelhor()}><Image unoptimized={true} src={"/icons/pergunta-duvida.gif"} width={30} height={30} /> Explique melhor</button>
                     <button onClick={() => copyToClipboardEncerramento()}><Image unoptimized={true} src={"/icons/tchau.gif"} width={30} height={30} /> Encerramento</button>
                     <button onClick={() => copyToClipboardFaltaDeComunicacao()}><Image unoptimized={true} src={"/icons/relogio.gif"} width={30} height={30} /> Falta de comunicação</button>
                     <button onClick={() => copyToClipboardHoraTecnica()}><Image unoptimized={true} src={"/icons/hora-tecnica.gif"} width={30} height={30} /> Hora técnica</button>
