@@ -25,6 +25,7 @@ import {
 } from '../../copyFunctions';
 
 import AddCardBtn from '@/addCard';
+import Image from 'next/image';
 
 export default function Laudos() {
     const router = useRouter();
@@ -90,14 +91,14 @@ export default function Laudos() {
 
             <section className={styles.section}>
                 <div className={styles.container_btns}>
-                    <button onClick={() => copyToClipboardBomDia(userName, businessName)}>🌞 Bom dia</button>
-                    <button onClick={() => copyToClipboardBoaTarde(userName, businessName)}>🌅 Boa tarde</button>
-                    <button onClick={() => copyToClipboardBoaNoite(userName, businessName)}>🌙 Boa noite</button>
-                    <button onClick={() => copyToClipboardComoAjudo()}>🤔 Pergunta dúvida</button>
-                    <button onClick={() => copyToClipboardExplqueMelhor()}>❓ Explique melhor</button>
-                    <button onClick={() => copyToClipboardEncerramento()}>👋 Encerramento</button>
-                    <button onClick={() => copyToClipboardFaltaDeComunicacao()}>⏰ Falta de comunicação</button>
-                    <button onClick={() => copyToClipboardHoraTecnica()}>💲 Hora técnica</button>
+                    <button onClick={() => copyToClipboardBomDia(userName, businessName)}><Image src={"/icons/dia.png"} width={30} height={30} /> Bom dia</button>
+                    <button onClick={() => copyToClipboardBoaTarde(userName, businessName)}><Image src={"/icons/tarde.gif"} width={30} height={30} />Boa tarde</button>
+                    <button onClick={() => copyToClipboardBoaNoite(userName, businessName)}><Image src={"/icons/noite.png"} width={30} height={30} /> Boa noite</button>
+                    <button onClick={() => copyToClipboardComoAjudo()}><Image src={"/icons/pergunta-duvida.png"} width={30} height={30} /> Pergunta dúvida</button>
+                    <button onClick={() => copyToClipboardExplqueMelhor()}><Image src={"/icons/explique-melhor.png"} width={30} height={30} /> Explique melhor</button>
+                    <button onClick={() => copyToClipboardEncerramento()}><Image src={"/icons/tchau.png"} width={30} height={30} /> Encerramento</button>
+                    <button onClick={() => copyToClipboardFaltaDeComunicacao()}><Image src={"/icons/relogio.png"} width={30} height={30} /> Falta de comunicação</button>
+                    <button onClick={() => copyToClipboardHoraTecnica()}><Image src={"/icons/hora-tecnica.gif"} width={30} height={30} /> Hora técnica</button>
                     {/* <AddCardBtn /> */}
                 </div>
 
