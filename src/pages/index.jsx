@@ -13,7 +13,7 @@ export default function Home() {
         e.preventDefault();
 
         if (nameUser) {
-            Cookies.set('name', nameUser, { expires: 7 });
+            Cookies.set('name', nameUser, { expires: 365 });
             router.push('/empresa'); // Navigates to "/empresa" using the router
         }
     };
