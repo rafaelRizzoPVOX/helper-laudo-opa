@@ -13,7 +13,7 @@ export default function Empresa() {
         e.preventDefault();
 
         if (nameBusiness) {
-            Cookies.set('business', nameBusiness, { expires: 7 });
+            Cookies.set('business', nameBusiness, { expires: 365 });
             router.push('/laudos');
         }
     };
